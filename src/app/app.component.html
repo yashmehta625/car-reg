@@ -9,9 +9,9 @@
             <input type="text" formControlName="fullName" placeholder="Please enter full name" class="form-control"
               [ngClass]="{ 'is-invalid': submitted && carForm.get('fullName')?.errors?.['required'] }" />
             <div *ngIf="form['fullName'].touched && form['fullName'].invalid" class="error">
-              <div *ngIf="form['fullName'].errors?.['required']">Please first name is required.</div>
+              <div *ngIf="form['fullName'].errors?.['required']">Full Name is required.</div>
               <div *ngIf="form['fullName'].errors?.['maxlength']">Name should not be more than 75 characters.</div>
-              <div *ngIf="form['fullName'].errors?.['pattern']"> Numbers and special Characters are not allowed.</div>
+              <div *ngIf="form['fullName'].errors?.['pattern']">Only A-Z a-z characters are allowed.</div>
             </div>
           </div>
           <div class="form-group">
@@ -30,7 +30,7 @@
               formControlName="parts">
             </ng-select>
             <div *ngIf="form['parts'].touched && form['parts'].invalid" class="error">
-              <div *ngIf="form['parts'].errors?.['required']">Please select atleast one part</div>
+              <div *ngIf="form['parts'].errors?.['required']">Please select atleast one part.</div>
             </div>
           </div>
           <div class="form-group">

@@ -50,13 +50,20 @@ export class AppComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    console.log(this.carForm.value)
-
+    this.carService.createReg(this.carForm.value).subscribe((res:any) => {
+      if(res.id){
+        alert("Car Registeration successful !");
+        this.onReset();
+      }else{
+        this.submitted = false;
+        alert("Failed to register car details. Try Again !");
+      }
+    });
   }
 
   onReset() {
+    this.submitted = false;
     this.carForm.reset();
-
   }
 
 

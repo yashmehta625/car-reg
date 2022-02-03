@@ -19,4 +19,9 @@ export class CarService {
   getParts(): Observable<Parts[]> {
     return this.http.get<Parts[]>('https://s3-ap-southeast-1.amazonaws.com/he-public-data/ListOfAutoParts1aaa4e5.json');
   }
+
+  createReg(data: any) {
+    console.log(data);
+    return this.http.post('https://reqres.in/api/users', data);
+  }
 }
